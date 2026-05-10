@@ -1,0 +1,237 @@
+@font-face {
+  font-family: "Anthropic Sans";
+  src: url("https://cdn.jsdelivr.net/gh/devchauhann/fonts@v1.1.0/cdn/v1/fonts/AnthropicSans@400.woff2")
+    format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Anthropic Sans";
+  src: url("https://cdn.jsdelivr.net/gh/devchauhann/fonts@v1.1.0/cdn/v1/fonts/AnthropicSans@700.woff2")
+    format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f6f6f6;
+  color: #111;
+  font-family: "Anthropic Sans", Arial, Helvetica, sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.page {
+  width: min(920px, calc(100vw - 24px));
+  margin: 24px auto;
+  padding: 16px;
+  border: 3px solid #111;
+  background: #fff;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+}
+
+.section {
+  margin-top: 18px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.section-heading span {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.section-heading button {
+  min-height: 40px;
+  min-width: 96px;
+  border: 2px solid #111;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.section-heading button:disabled {
+  border-color: #aaa;
+  background: #ddd;
+  color: #777;
+  cursor: not-allowed;
+}
+
+.belt {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  border: 3px solid #111;
+  background: #eee;
+  touch-action: none;
+}
+
+.belt-line {
+  position: absolute;
+  top: 105px;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: #111;
+}
+
+.bag-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+}
+
+.bag-button:focus-visible,
+.section-heading button:focus-visible {
+  outline: 3px solid #1a73e8;
+  outline-offset: 3px;
+}
+
+.bag {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 2px solid #111;
+  color: #111;
+  font-size: 0.75rem;
+  font-weight: 700;
+  user-select: none;
+}
+
+.bag-small {
+  width: 36px;
+  height: 36px;
+  font-size: 0.7rem;
+}
+
+.storage-section {
+  max-width: 430px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.storage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.storage-cell {
+  position: relative;
+  display: grid;
+  min-height: 92px;
+  place-items: center;
+  border: 3px solid #111;
+  background: #fff;
+}
+
+.priority-cell {
+  border-style: dotted;
+}
+
+.drop-target {
+  outline: 4px solid #17823b;
+  outline-offset: 2px;
+}
+
+.placed-at {
+  position: absolute;
+  right: 5px;
+  bottom: 4px;
+  color: #555;
+  font-size: 0.75rem;
+}
+
+.unloaded {
+  margin-top: 18px;
+}
+
+.unloaded h2 {
+  font-size: 1rem;
+}
+
+.unloaded ol {
+  min-height: 32px;
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.drag-ghost {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.drag-ghost.is-visible {
+  opacity: 1;
+}
+
+@media (max-width: 520px) {
+  .page {
+    margin: 12px auto;
+    padding: 12px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .storage-cell {
+    min-height: 74px;
+  }
+
+  .bag-small {
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "luggage-carousel",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A Next.js LIFO luggage carousel and storage-area demo for GitHub Pages.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "test": "node tests/storage.test.ts && node tests/belt.test.ts",
+    "check": "next typegen && tsc --noEmit && node scripts/validate.ts"
+  },
+  "dependencies": {
+    "next": "^16.2.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "overrides": {
+    "postcss": "^8.5.10"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
+}
