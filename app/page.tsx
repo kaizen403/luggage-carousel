@@ -211,7 +211,7 @@ export default function Home() {
 
   return (
     <main className="page">
-      <h1>Luggage Carousel</h1>
+      <h1>Baggage Claaim</h1>
       <Carousel beltRef={beltRef} bags={visibleBags} onStartDrag={startDrag} />
       <StorageArea
         cells={storage}
